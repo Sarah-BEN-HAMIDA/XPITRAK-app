@@ -1,0 +1,95 @@
+/* General Sidebar Styles */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  z-index: 1000;
+  margin-top: 60px;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.sidebar-toggle:hover {
+  background-color: #444;
+}
+
+.sidebar-toggle:focus {
+  outline: none;
+}
+
+/* Sidebar links (nested under toggles) */
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 0;
+  display: block;
+}
+
+.sidebar a:hover {
+  background-color: #555;
+  padding-left: 10px;
+  transition: padding-left 0.3s ease;
+}
+
+/* Nested links for open sections */
+.sidebar ul ul {
+  padding-left: 20px;
+}
+
+/* Styles for the collapsible sections */
+.sidebar .sidebar-toggle {
+  font-weight: bold;
+}
+
+.sidebar .sidebar-toggle .fa-chevron-down,
+.sidebar .sidebar-toggle .fa-chevron-right {
+  transition: transform 0.3s ease;
+}
+
+/* Adjust the icon direction based on state */
+.sidebar .sidebar-toggle[aria-expanded="true"] .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.sidebar .sidebar-toggle[aria-expanded="false"] .fa-chevron-right {
+  transform: rotate(0deg);
+}
+
+/* For responsive behavior: collapsible sidebar on smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+  }
+}

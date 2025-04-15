@@ -1,0 +1,75 @@
+/* ===== Sidebar Manager Styles ===== */
+
+.sidebar-manager {
+  position: fixed;
+  top: 60px; /* Adjust based on navbar height */
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+/* When visible, slide in */
+.sidebar-manager.visible {
+  transform: translateX(0);
+}
+
+/* Sidebar content styles */
+.sidebar-manager ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-manager li {
+  padding: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar-manager li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-manager li a:hover {
+  background-color: #575757;
+}
+
+/* Back to Manager Space section */
+.back-to-manager {
+  padding: 15px;
+  border-bottom: 1px solid #444;
+}
+
+.back-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-icon {
+  margin-right: 5px;
+}
+
+/* Optional: Styling for when the sidebar is collapsed (if needed) */
+.sidebar-manager.collapsed {
+  width: 60px;
+}
+
+.sidebar-manager.collapsed ul {
+  display: none; /* Hide menu items when collapsed */
+}
+
+.sidebar-manager.collapsed .back-to-manager {
+  display: none; /* Hide the back-to-manager link when collapsed */
+}

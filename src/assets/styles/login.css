@@ -1,0 +1,287 @@
+/* src/assets/styles/login.css */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #d1d8e0,
+    #548aa7
+  ); /* Blue to white gradient background */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 15px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.brand-name {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.login-form-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.user-icon {
+  margin-bottom: 15px; /* Icon above the "Create Account" text */
+  color: #548aa7;
+  transition: color 0.3s ease-in-out;
+}
+
+.user-icon:hover {
+  color: #0d5e7d;
+}
+
+.login-header h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #2d3a43;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2d3a43;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #333;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-group input:focus {
+  border-color: #548aa7;
+  outline: none;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.forgot-password {
+  color: #548aa7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #0d5e7d;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #548aa7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: #0d5e7d;
+}
+
+.create-account {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.create-account a {
+  color: #548aa7;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.create-account a:hover {
+  color: #0d5e7d;
+  text-decoration: underline;
+}
+
+/* Container for password input and the eye icon */
+.password-container {
+  position: relative;
+}
+
+.password-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #548aa7;
+  transition: color 0.3s ease;
+}
+
+.password-icon:hover {
+  color: #0d5e7d;
+}
+
+/* Advanced styling for the create account page */
+.create-account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.create-account-form-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.create-account-form .form-group {
+  margin-bottom: 20px;
+}
+
+.create-account-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2d3a43;
+  font-weight: 500;
+}
+
+.create-account-form .form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #333;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.create-account-form .form-group input:focus {
+  border-color: #548aa7;
+  outline: none;
+}
+
+.create-account-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #548aa7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.create-account-button:hover {
+  background-color: #0d5e7d;
+}
+
+.login-redirect {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-redirect a {
+  color: #548aa7;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-redirect a:hover {
+  color: #0d5e7d;
+}
+
+/* Responsive design for mobile devices */
+@media screen and (max-width: 480px) {
+  .login-form-container,
+  .create-account-form-container {
+    padding: 20px;
+  }
+
+  .login-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group input {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .login-button,
+  .create-account-button {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+
+  .create-account a {
+    font-size: 1rem;
+  }
+}

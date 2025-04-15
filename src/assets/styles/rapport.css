@@ -1,0 +1,97 @@
+/* Rapport Page Layout */
+.rapport-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 20px;
+}
+
+.main-layout {
+  display: flex;
+  margin-top: 60px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.content-container {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Alert Settings Section */
+.alert-settings {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.alert-settings-left,
+.alert-settings-right {
+  width: 48%;
+}
+
+/* Alert Settings Input Styling */
+.alert-settings input,
+.alert-settings select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Separator Line */
+.separator-line {
+  border-top: 2px solid #4caf50;
+  margin: 20px 0;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Generate Report Section */
+.generate-report .form-group input,
+.generate-report .form-group select,
+.generate-report .form-group button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.generate-report .form-group button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.generate-report .form-group button:hover {
+  background-color: #45a049;
+}
+.admin-sidebar {
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+.admin-sidebar.collapsed {
+  width: 0;
+  overflow: hidden;
+}

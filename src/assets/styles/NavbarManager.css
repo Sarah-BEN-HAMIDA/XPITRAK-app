@@ -1,0 +1,96 @@
+/* Navbar Styles */
+.navbar-dark {
+  display: flex;
+  justify-content: space-between; /* Space between the left and right sections */
+  align-items: center;
+  background-color: #333; /* Background color for the navbar */
+  padding: 10px 20px;
+}
+
+/* Left section - Sidebar Icon, Logo, and Manager Title */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between sidebar icon, logo, and title */
+}
+
+.navbar-logo {
+  height: 40px; /* Adjust logo size */
+}
+
+.navbar-icon {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-icon:hover {
+  color: #3b82f6; /* Change color on hover */
+}
+
+/* Page name - Title */
+.page-name {
+  font-size: 20px;
+  color: white;
+  margin: 0; /* Remove any default margin */
+}
+
+/* Center section - Search Zone */
+.search-zone {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between search input and search button */
+  flex-grow: 1; /* Take up available space */
+  justify-content: center; /* Center the search bar */
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 300px; /* Set the desired width */
+}
+
+.search-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+/* Right section - Alert Icon and User Icon */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between icons */
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-dark {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    padding: 10px;
+  }
+
+  .navbar-left {
+    gap: 5px; /* Reduced space between logo and manager icon */
+  }
+
+  .navbar-right {
+    gap: 15px; /* Adjust space between icons */
+  }
+
+  .page-name {
+    font-size: 18px; /* Adjust font size on smaller screens */
+  }
+
+  .search-input {
+    width: 250px; /* Adjust width of search input */
+  }
+}

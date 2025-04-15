@@ -1,0 +1,163 @@
+/* Wrapper for the whole page */
+.admin-services-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f7fc;
+  min-height: 100vh;
+  margin-top: 100px;
+}
+
+/* Navbar spacing */
+.admin-services-page .navbar-admin {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Sidebar style (like Employee page) */
+.admin-services-sidebar {
+  position: fixed;
+  top: 60px; /* below navbar */
+  left: 0;
+  width: 220px;
+  height: calc(100vh - 60px);
+  background-color: #333;
+  color: white;
+  padding: 20px 10px;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.admin-services-sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+/* Main content area */
+.admin-services-page main {
+  flex: 1;
+  margin-left: 220px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.admin-services-page main.full-width {
+  margin-left: 0;
+}
+
+/* Overview cards */
+.overview-sales {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Card component */
+.card {
+  background: linear-gradient(145deg, #3498db, #2980b9);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  color: white;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.card span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Chart section layout */
+.chart-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.chart-box {
+  flex: 1 1 48%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Product Sales Progress Tabs */
+.product-sales-progress {
+  margin-top: 40px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.tab-btn {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Title styling */
+h1,
+h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .admin-services-sidebar {
+    width: 180px;
+  }
+
+  .admin-services-page main {
+    margin-left: 0 !important;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .chart-box {
+    flex: 1 1 100%;
+  }
+}

@@ -1,0 +1,216 @@
+/* ===== Root Custom Properties (CSS Variables) ===== */
+:root {
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 0;
+  --navbar-height: 60px;
+  --transition-duration: 0.3s;
+  --primary-color: #333;
+  --highlight-color: #575757;
+  --button-bg: #4caf50;
+  --button-hover-bg: #45a049;
+  --form-input-border: 1px solid #ccc;
+  --form-input-padding: 10px;
+  --border-radius: 4px;
+  --content-padding: 20px;
+  --max-content-width: 1200px;
+  --main-bg-color: #f4f4f4;
+  --content-bg-color: white;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Layout Wrapper ===== */
+.rapport-wrapper {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "sidebar main-content";
+  height: 100vh; /* Ensure it takes full height */
+  transition: grid-template-columns var(--transition-duration) ease;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* ===== Admin Sidebar Styles ===== */
+.admin-sidebar {
+  grid-area: sidebar;
+  background-color: var(--primary-color);
+  color: white;
+  height: 100vh;
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  padding-top: 20px;
+  transition: width var(--transition-duration) ease,
+    transform var(--transition-duration) ease;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+
+/* Sidebar Collapsed State */
+.admin-sidebar.collapsed {
+  width: var(--sidebar-collapsed-width);
+  overflow: hidden;
+  transform: translateX(-100%);
+}
+
+/* Sidebar Content */
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-sidebar ul li {
+  padding: 15px;
+  text-align: center;
+}
+
+.admin-sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-duration) ease;
+}
+
+.admin-sidebar ul li a:hover {
+  background-color: var(--highlight-color);
+}
+
+/* ===== Main Content Styles ===== */
+.rapport-wrapper .rapport-content {
+  grid-area: main-content;
+  padding: var(--content-padding);
+  margin-top: var(--navbar-height); /* Adjust based on navbar */
+  background-color: var(--main-bg-color);
+  transition: margin-left var(--transition-duration) ease;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.rapport-wrapper.sidebar-collapsed .rapport-content {
+  margin-left: 0;
+}
+
+/* ===== Inner Container ===== */
+.content-container {
+  padding: var(--content-padding);
+  background-color: var(--content-bg-color);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  max-width: var(--max-content-width);
+  width: 100%;
+}
+
+/* ===== Navbar Button to Toggle Sidebar ===== */
+.navbar-admin button {
+  background-color: var(--button-bg);
+  color: white;
+  padding: var(--content-padding);
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-duration) ease;
+}
+
+.navbar-admin button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* ===== Alert Settings ===== */
+.alert-settings {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.alert-settings-left,
+.alert-settings-right {
+  width: 48%;
+}
+
+.alert-settings input,
+.alert-settings select {
+  width: 100%;
+  padding: var(--form-input-padding);
+  margin-bottom: 10px;
+  border: var(--form-input-border);
+  border-radius: var(--border-radius);
+}
+
+/* ===== Report Generation ===== */
+.generate-report .form-group input,
+.generate-report .form-group select,
+.generate-report .form-group button {
+  width: 100%;
+  padding: var(--form-input-padding);
+  margin-bottom: 10px;
+  border: var(--form-input-border);
+  border-radius: var(--border-radius);
+}
+
+.generate-report .form-group button {
+  background-color: var(--button-bg);
+  color: white;
+  cursor: pointer;
+}
+
+.generate-report .form-group button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* ===== Button Styling (Generic) ===== */
+button {
+  padding: 10px 20px;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration) ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1024px) {
+  .rapport-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas: "main-content";
+  }
+
+  .rapport-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .admin-sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 180px;
+  }
+
+  .rapport-content {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .rapport-content {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

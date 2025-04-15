@@ -1,0 +1,144 @@
+/* General Navbar Styles */
+.navbar-dark {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  height: 60px; /* Fixed height for navbar */
+  width: 100%;
+  box-sizing: border-box; /* Prevent overflow */
+  position: relative; /* Ensure it stays in place */
+  overflow: hidden; /* Prevent elements from overflowing */
+}
+
+/* Container for Navbar items */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Ensure it doesn't stretch too much */
+  margin: 0 auto; /* Centering the navbar on large screens */
+  box-sizing: border-box;
+}
+
+/* Logo Styling */
+.navbar-logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Title (Dashboard Link) */
+.navbar-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar-title-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title-link:hover {
+  color: #3498db;
+}
+
+/* Search Styling */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  order: 2; /* Ensure it stays in the right place even on mobile */
+}
+
+.navbar-search-input {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  width: 200px; /* Fixed width */
+}
+
+.navbar-search-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.navbar-search-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Icons Styling */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  order: 3; /* Make sure icons come after search on mobile */
+}
+
+.navbar-icon {
+  font-size: 18px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.navbar-icon:hover {
+  color: #3498db;
+}
+
+/* Desktop view - Flexbox layout */
+@media (min-width: 1024px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .navbar-title {
+    font-size: 20px;
+  }
+
+  .navbar-search {
+    margin-left: auto; /* Move search to the right side */
+    order: 1; /* Make sure search stays in the right position */
+  }
+
+  .navbar-icons {
+    margin-left: 20px; /* Add spacing between icons */
+    order: 2; /* Keep icons after search bar */
+  }
+}
+
+/* Mobile and tablet responsiveness */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-search {
+    width: 100%; /* Take up full width */
+    margin-top: 10px;
+    order: 1; /* Move search bar to top */
+  }
+
+  .navbar-search-input {
+    width: 100%; /* Ensure search input is full width */
+  }
+
+  .navbar-icons {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    order: 3; /* Move icons to the bottom */
+  }
+
+  .navbar-icon {
+    font-size: 20px; /* Make icons larger for mobile */
+  }
+}
